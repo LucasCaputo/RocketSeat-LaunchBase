@@ -72,8 +72,9 @@ a.active,a:hover{
     label.logo img{
         display: block;
         transform: scale(0.8);     
-        padding-left: 50px;          
+               
     } 
+
 
     .checkbtn{
         display: block;
@@ -112,4 +113,23 @@ a.active,a:hover{
 
     }
 }
+
+@media (max-width: 458px){
+    label.logo img{
+        display: block;
+        transform: scale(0.7);  
+        padding: 22px;   
+               
+    } 
+}
+
+@media (max-width: 280px){
+    label.logo img{
+        display: none;          
+    } 
+}
+
+
+
+
 

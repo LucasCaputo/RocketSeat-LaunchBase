@@ -1,0 +1,119 @@
+body{
+align-items: center;
+background-color: azure;
+display: flex;
+flex-direction: column;
+
+
+}
+
+nav{
+display: flex;
+margin-left: 10%;
+
+}
+
+.logo{
+font-size: 24px;
+align-items: center;
+max-width: 150px;
+margin: 0;
+padding: 0;
+}
+
+ul{
+font-size: 14px;
+display: flex;
+flex-direction: row;
+align-items: center;
+
+}
+li{
+margin-right: 32px;
+}
+
+
+.banner{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+background-color: #fbdfdb;
+border-radius: 15px;
+height: 366px;
+width: 90%;
+}
+
+.banner-content{
+align-self: center;
+margin: 0 15% 0 8% ;
+width: 360px;
+line-height: 100%;
+
+}
+
+.title-large{
+font-size: 32px;
+font-weight: 800;
+line-height: 42px;
+}
+
+.subtitle-large{
+font-size: 16px;
+}
+
+.img-banner{
+height: 300px;
+width: 216px;
+margin: 32px;
+}
+
+.title-medium{
+font-size: 24px;
+
+}
+
+.content{
+    width: 90%;
+}
+
+.cards{
+display: flex;
+justify-content: space-between;
+text-align: center;
+
+} 
+
+.cards a{
+display: flex;
+flex-direction: column;
+height: 240px;
+width: 250px;
+border: darkseagreen 1px solid;
+border-radius: 15px;
+}
+
+cards img{
+margin: 8px;
+width: 100%;
+height: 140px;
+}
+
+.title-small{
+font-size: 16px;
+margin-top: 32px;
+}
+
+.subtitle-small{
+font-size: 10px;
+
+}
+footer{
+background-color: darkgray;
+margin-top: 16px ;
+text-align: center;
+font-size: 14px;
+width: 100%;
+
+}
+
+

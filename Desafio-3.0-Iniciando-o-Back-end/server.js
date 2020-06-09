@@ -3,11 +3,9 @@ const nunjucks = require("nunjucks");
 
 const server = express();
 
-server.use(express.static("public"));
+server.use(express.static('public'));
 
-// server.use(express.static("public"));
-
-server.set("view engine, ", "html");
+server.set("view engine", "html");
 
 nunjucks.configure("views", {
     express: server

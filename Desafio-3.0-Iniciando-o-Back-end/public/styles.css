@@ -123,6 +123,8 @@ header {
     }
 }
 
+/* Modal */
+
 .modal-overlay {
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%;
@@ -159,4 +161,19 @@ iframe {
     height: 100%;
     position: absolute;
     top: 5%;
+}
+
+/* not-found */
+
+.not-found {
+    margin-top: 30px;
+    text-align: center;
+}
+.not-found p {
+    margin-top: 8px;
+}
+
+.not-found img {
+    margin-top: 32px;
+    width: 150px;
 }

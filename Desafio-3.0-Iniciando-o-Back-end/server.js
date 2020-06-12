@@ -15,8 +15,12 @@ server.get("/", function (req, res) {
     return res.render("about");
 });
 
-server.get("/portfolio", function (req, res) {
-    return res.render("portfolio");
+server.get("/courses", function (req, res) {
+    return res.render("courses");
+});
+
+server.use(function (req, res) {
+    res.status(404).render("not-found");
 });
 
 server.listen(5000, function () {

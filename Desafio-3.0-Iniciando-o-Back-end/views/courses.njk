@@ -10,49 +10,24 @@
     </div>
 
     <section class="cards">
-        <div class="card" id="6wn8hpUcEcM">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/6wn8hpUcEcM/hqdefault.jpg" alt=""/>
-            </div>
-            <div class="card__content">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat a iure, corporis repellat voluptas officiis voluptates. Dolores soluta vel repellat nemo dicta obcaecati laudantium sunt tenetur quasi, repudiandae, enim recusandae.
-                </p>
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-        </div>
-        <div class="card" id="JzQuJSJoPeM">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/JzQuJSJoPeM/hqdefault.jpg" alt=""/>
-            </div>
-            <div class="card__content">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat a iure, corporis repellat voluptas officiis voluptates. Dolores soluta vel repellat nemo dicta obcaecati laudantium sunt tenetur quasi, repudiandae, enim recusandae.
-                </p>
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-        </div>
 
-        <div class="card" id="EhnXaybirdA">
-            <div class="card__image-container">
-                <img src="https://img.youtube.com/vi/EhnXaybirdA/hqdefault.jpg" alt=""/>
+        {% for item in items %}
+            <div class="card" id="{{item.id}}">
+                <div class="card__image-container">
+                    <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}"/>
+                </div>
+                <div class="card__content">
+                    <p>
+                        {{item.title}}
+                    </p>
+                </div>
+                <div class="card__info">
+                    <p>{{item.duration}}</p>
+                    <p class="card__price">{{item.price}}</p>
+                </div>
             </div>
-            <div class="card__content">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat a iure, corporis repellat voluptas officiis voluptates. Dolores soluta vel repellat nemo dicta obcaecati laudantium sunt tenetur quasi, repudiandae, enim recusandae.
-                </p>
-            </div>
-            <div class="card__info">
-                <p>57 min</p>
-                <p class="card__price">Free</p>
-            </div>
-        </div>
+        {% endfor %}
+
     </section>
 
     <div class="modal-overlay">

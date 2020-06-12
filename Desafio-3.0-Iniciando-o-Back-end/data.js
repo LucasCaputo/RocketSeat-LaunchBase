@@ -10,7 +10,8 @@ module.exports = [
         id: "JzQuJSJoPeM",
         title: "GERADOR DE ENERGIA SEM FIM - ENERGIA LIVRE PARA SEMPRE",
         duration: "8 min",
-        price: " Free"
+        price: " Free",
+        featured: true
     },
     {
         id: "EhnXaybirdA",

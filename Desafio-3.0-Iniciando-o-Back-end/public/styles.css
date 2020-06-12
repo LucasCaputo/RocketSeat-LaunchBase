@@ -83,7 +83,7 @@ header {
 /* cards */
 
 .cards {
-    max-width: 1000px;
+    max-width: 90%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -114,6 +114,13 @@ header {
     padding: 5px 20px;
     border-radius: 20px;
     text-align: center;
+}
+
+@media (max-width: 900px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
 }
 
 .modal-overlay {

@@ -94,6 +94,7 @@ header {
 .card {
     display: grid;
     background-color: var(--color-rocket);
+    cursor: pointer;
 }
 
 .card__image-container img {
@@ -179,4 +180,20 @@ iframe {
 .not-found img {
     margin-top: 32px;
     width: 150px;
+}
+
+/* Featured */
+
+.featured-wrapper.card__image-container {
+    position: relative;
+}
+
+.featured {
+    background: #f7d05f;
+    color: #111;
+    padding: 8px;
+    position: absolute;
+    right: 5px;
+    border-radius: 16px;
+    top: -10px;
 }

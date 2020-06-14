@@ -7,19 +7,12 @@
 {% block content %}
 
     <div id="wrapper">
-        <h1>{{item.title}}</h1>
+        <h1 class="title">{{item.title}}</h1>
     </div>
 
     <section class="video">
 
         <div class="card" id="{{item.id}}">
-            <div>
-
-                <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}"/>
-
-                {# <iframe src="https://www.youtube.com/embed/{{item.id}}" frameborder="0"></iframe> #}
-
-            </div>
             <div class="card__content">
                 <p>
                     {{item.description}}
@@ -32,6 +25,12 @@
                         Assista Agora</p>
                 </a>
             </div>
+        </div>
+
+        <div>
+
+            <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}"/>
+
         </div>
 
     </section>

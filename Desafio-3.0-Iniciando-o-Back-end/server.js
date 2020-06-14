@@ -46,7 +46,6 @@ server.get("/courses/:id", function (req, res) {
     const video = videos.find(function (video) {
         return ":id" + video.id == id;
     });
-    console.log(video);
 
     if (!video) {
         return res.render("not-found");

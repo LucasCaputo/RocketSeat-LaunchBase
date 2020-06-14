@@ -1,0 +1,39 @@
+{% extends "layout.njk" %}
+{% block head %}
+
+    <title>Vídeos Legais</title>
+
+{% endblock %}
+{% block content %}
+
+    <div id="wrapper">
+        <h1>{{item.title}}</h1>
+    </div>
+
+    <section class="video">
+
+        <div class="card" id="{{item.id}}">
+            <div>
+
+                <img src="https://img.youtube.com/vi/{{item.id}}/hqdefault.jpg" alt="Imagem de {{item.title}}"/>
+
+                {# <iframe src="https://www.youtube.com/embed/{{item.id}}" frameborder="0"></iframe> #}
+
+            </div>
+            <div class="card__content">
+                <p>
+                    {{item.description}}
+                </p>
+            </div>
+            <div class="card__info">
+                <p>{{item.duration}}</p>
+                <a href="/videos?id={{item.id}}">
+                    <p class="card__price">{{item.price}}
+                        Assista Agora</p>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

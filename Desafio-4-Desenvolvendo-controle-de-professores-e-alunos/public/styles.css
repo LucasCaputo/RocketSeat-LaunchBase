@@ -121,7 +121,8 @@ header {
     color: var(--primary-color);
 }
 
-.details .item span {
+.details .item span,
+.details .item select {
     padding: 8px 16px;
     background-color: var(--second-color);
     border-radius: 16px;

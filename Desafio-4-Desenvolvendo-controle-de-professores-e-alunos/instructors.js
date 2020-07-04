@@ -12,7 +12,14 @@ exports.post = function (req, res) {
         }
     }
 
-    let { avatar_url, birth, gender, services, name } = req.body;
+    let {
+        avatar_url,
+        birth,
+        class_type,
+        services,
+        name,
+        educational_level
+    } = req.body;
 
     birth = Date.parse(birth);
     const created_at = Date.now();
@@ -23,9 +30,10 @@ exports.post = function (req, res) {
         name,
         avatar_url,
         birth,
-        gender,
+        class_type,
         services,
-        created_at
+        created_at,
+        educational_level
     });
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {

@@ -31,16 +31,26 @@
             </div>
 
             <div class="item">
-                <div>Sexo</div>
+                <div>Grau de escolaridade</div>
+                <select name="educational_level">
+                    <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                    <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                    <option value="Mestrado">Mestrado</option>
+                    <option value="Doutorado">Doutorado</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <div>Tipo de aula</div>
                 <div>
-                    <span><input type="radio" name="gender" value="M" checked="checked">Masculino</span>
-                    <span><input type="radio" name="gender" value="F">Feminino</span>
+                    <span><input type="radio" name="class_type" value="Presencial" checked="checked">Presencial</span>
+                    <span><input type="radio" name="class_type" value="distancia">À distância</span>
                 </div>
             </div>
 
             <div class="item">
                 <div>Área de atuação</div>
-                <div><input type="text" name="services" placeholder="Separe os serviços com uma virgula"></div>
+                <div><input type="text" name="services" placeholder="Separe as matérias com uma virgula"></div>
             </div>
             <button type="submit">Salvar</button>
         </section>

@@ -1,13 +1,52 @@
 {
+  "members": [
+    {
+      "avatar_url": "https://source.unsplash.com/collection/9647150/800x800",
+      "name": "Lucas Aluno",
+      "email": "lucas@roanldo.com",
+      "birth": 738806400000,
+      "gender": "M",
+      "blood": "AB1",
+      "weight": "90",
+      "height": "150",
+      "id": 2,
+      "created_at": 1600110614303
+    },
+    {
+      "avatar_url": "https://img.freepik.com/fotos-gratis/gotas-de-oleo-na-imagem-abstrata-padrao-psicodelico-de-agua_23-2148290141.jpg?size=626&ext=jpg",
+      "name": "Lucas Aluno",
+      "email": "lucas@roanldo.com",
+      "birth": 738806400000,
+      "gender": "M",
+      "blood": "AB1",
+      "weight": "150",
+      "height": "150",
+      "id": 3,
+      "created_at": 1600110647695
+    },
+    {
+      "avatar_url": "https://source.unsplash.com/collection/9647150/800x800",
+      "name": "Lucas Reis Caputo",
+      "email": "lccaputo@hotmail.com",
+      "birth": 738806400000,
+      "gender": "M",
+      "blood": "AB1",
+      "weight": "180",
+      "height": "166",
+      "id": 5,
+      "created_at": 1600112315111
+    }
+  ],
   "instructors": [
     {
       "id": 1,
-      "name": "dddddd",
-      "avatar_url": "http://localhost:3000/instructors/create",
-      "birth": -27080352000000,
+      "name": "Miss Bella Make UP",
+      "avatar_url": "http://localhost:3000/",
+      "birth": 1599436800000,
+      "gender": "M",
       "class_type": "Presencial",
-      "services": "5555",
-      "created_at": 1593868087112,
+      "services": "Olá lucas, caputo",
+      "created_at": 1600115135750,
       "educational_level": "Mestrado"
     }
   ]

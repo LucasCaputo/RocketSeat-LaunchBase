@@ -1,0 +1,31 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="banner">
+        <div class="banner-content">
+            <h1 class="title-large">{{data.title}}</h1>
+            <h3 class="subtitle-large">
+                {{data.description}}
+            </h3>
+        </div>
+        <img class="img-banner" src="/assets/chef-Foodfy.png" alt="Foodfy"/>
+    </div>
+
+    <div >
+        <h3 class="title-medium center">Mais Acessadas</h3>
+
+        <div class="cards">
+
+            {% for food in foods %}
+                <a href="#">
+                    <img src="{{food.image}}" alt="{{food.title}}"/>
+                    <h4 class="title-small">{{food.title}}</h4>
+                    <p class="subtitle-small">por
+                        {{food.by}}</p>
+                </a>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

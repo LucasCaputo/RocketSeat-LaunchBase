@@ -1,0 +1,53 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div class="card">
+        <section class="avatar" style="background: url({{recipe.avatar_url}}) no-repeat center center"></section>
+        <section class="details">
+            <h3>
+                Detalhes
+            </h3>
+            <div class="item">
+                <div>Nome Completo</div>
+                <div>{{recipe.name}}</div>
+            </div>
+
+            <div class="item">
+                <div>Idade</div>
+                <div>{{recipe.age}}</div>
+            </div>
+
+            <div class="item">
+                <div>Sexo</div>
+                <div>{{ "Masculino" if recipe.gender == "M" else "Feminino"}}</div>
+            </div>
+
+            <div class="item">
+                <div>Grau de escolaridade</div>
+                <div>{{recipe.educational_level}}</div>
+            </div>
+
+            <div class="item">
+                <div>Tipo de aula</div>
+                <div>
+                    <span>{{recipe.class_type}}</span></div>
+            </div>
+
+            <div class="item">
+                <div>Acompanhamento</div>
+                <div>
+                    {% for service in recipe.services %}
+                        <span>{{service}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="item date">
+                <div>Desde</div>
+                <div>{{recipe.created_at}}</div>
+            </div>
+
+            <a href="/recipes/{{recipe.id }}/edit" class="button">Editar</a>
+        </section>
+    </div>
+{% endblock content %}

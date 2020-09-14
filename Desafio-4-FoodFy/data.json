@@ -1,0 +1,15 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "name": "Miss Bella Make UP",
+      "avatar_url": "http://localhost:3000/",
+      "birth": 747619200000,
+      "gender": "M",
+      "class_type": "Presencial",
+      "services": "Olá lucas, caputo",
+      "created_at": 1600115135750,
+      "educational_level": "Mestrado"
+    }
+  ]
+}

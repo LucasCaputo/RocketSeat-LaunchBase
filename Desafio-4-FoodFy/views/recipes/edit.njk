@@ -1,0 +1,33 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+        <section 
+            class="avatar" 
+            style="background: url(https://source.unsplash.com/collection/9021218/820x820) no-repeat center center">
+        </section>
+
+        <section class="details">
+            <form method="POST" action="/recipes?_method=PUT">
+                <h3>
+                    Editar Receita
+                </h3>
+
+                {% include 'recipes/fields.njk' %}
+
+                <input type="hidden" name="id" value={{recipes.id}}>
+            </form>
+            <form  id="form-delete" method="POST" action="/recipes?_method=DELETE">
+                <input type="hidden" name="id" value={{recipes.id}}>
+                <button type="submit">Deletar</button>
+            </form>
+        </section>
+    </div>
+   
+{% include 'formDelete.njk' %}
+   
+{% endblock content %}
+
+
+

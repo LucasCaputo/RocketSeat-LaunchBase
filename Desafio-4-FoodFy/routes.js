@@ -1,22 +1,14 @@
 const express = require("express");
 const routes = express.Router();
 const recipes = require("./controllers/recipes");
-const foods = require("./food")
+const dataRecipes = require("./data.json")
 
 routes.get("/", function (req, res) {
     return res.redirect("/home");
 });
 
 
-routes.get("/home", function (req, res) {
-    const data = {
-        title: "As Melhores Receitas",
-        description:
-            "Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro."
-    };
-
-    return res.render("home.njk", { data, foods });;
-});
+routes.get("/home", recipes.home);
 
 // receitas
 

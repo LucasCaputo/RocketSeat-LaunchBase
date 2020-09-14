@@ -1,6 +1,5 @@
 const fs = require("fs");
 const data = require("../data.json");
-const { age, date } = require("../utils");
 
 exports.index = function(req, res) {
     return res.render("recipes/index", { recipes: data.recipes})
@@ -9,29 +8,6 @@ exports.index = function(req, res) {
 exports.create = function(req, res) { 
     return res.render("recipes/create")
 }
-
-
-exports.show = function (req, res) {
-    const { id } = req.params;
-
-    const foundRecipe = data.recipes.find(function (recipe) {
-        return recipe.id == id;
-    });
-
-    if (!foundRecipe) return res.send("recipe not found");
-
-    const recipe = {
-        ...foundRecipe,
-        age: age(foundRecipe.birth),
-        gender: "",
-        services: foundRecipe.services.split(","),
-        created_at: Intl.DateTimeFormat("pt-BR").format(
-            foundRecipe.created_at
-        )
-    };
-
-    return res.render("recipes/show", { recipe });
-};
 
 exports.post = function (req, res) {
     const keys = Object.keys(req.body);
@@ -44,28 +20,26 @@ exports.post = function (req, res) {
 
     let {
         avatar_url,
-        birth,
-        gender,
-        class_type,
-        services,
         name,
-        educational_level
+        description,
+        duration,
+        price,
+        chef
+        
     } = req.body;
 
-    birth = Date.parse(birth);
     const created_at = Date.now();
     const id = Number(data.recipes.length + 1);
 
     data.recipes.push({
         id,
-        name,
         avatar_url,
-        birth,
-        gender,
-        class_type,
-        services,
-        created_at,
-        educational_level
+        name,
+        description,
+        duration,
+        price,
+        chef,
+        created_at
     });
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
@@ -73,6 +47,30 @@ exports.post = function (req, res) {
     });
 
     return res.redirect(`recipes/${id}`);
+};
+
+exports.home = function (req, res) {
+    allData = data.recipes
+    return res.render("home", {allData} );
+}
+
+exports.show = function (req, res) {
+    const { id } = req.params;
+
+    const foundRecipe = data.recipes.find(function (recipe) {
+        return recipe.id == id;
+    });
+
+    if (!foundRecipe) return res.send("recipe not found");
+
+    const recipe = {
+        ...foundRecipe,
+        created_at: Intl.DateTimeFormat("pt-BR").format(
+            foundRecipe.created_at
+        )
+    };
+
+    return res.render("recipes/show", { recipe });
 };
 
 exports.edit = function (req, res) {
@@ -84,12 +82,11 @@ exports.edit = function (req, res) {
 
     if (!foundRecipe) return res.send("recipe not found");
 
-    const recipe = {
+    const recipes = {
         ...foundRecipe,
-        birth: date(foundRecipe.birth).iso
     };
 
-    return res.render("recipes/edit", { recipe });
+    return res.render("recipes/edit", { recipes });
 };
 
 exports.put = function (req, res) {
@@ -112,7 +109,6 @@ exports.put = function (req, res) {
     const recipe = {
         ...foundRecipe,
         ...req.body,
-        birth: Date.parse(req.body.birth),
         id: Number(req.body.id)
     };
 

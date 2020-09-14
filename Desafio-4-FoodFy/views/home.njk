@@ -4,9 +4,9 @@
 
     <div class="banner">
         <div class="banner-content">
-            <h1 class="title-large">{{data.title}}</h1>
+            <h1 class="title-large">As Melhores Receitas</h1>
             <h3 class="subtitle-large">
-                {{data.description}}
+                Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.
             </h3>
         </div>
         <img class="img-banner" src="/assets/chef-Foodfy.png" alt="Foodfy"/>
@@ -17,12 +17,12 @@
 
         <div class="cards">
 
-            {% for food in foods %}
+            {% for recipe in allData %}
                 <a href="#">
-                    <img src="{{food.image}}" alt="{{food.title}}"/>
-                    <h4 class="title-small">{{food.title}}</h4>
+                    <section style="background: url({{recipe.avatar_url}}) no-repeat center center; width: 150px; height: 150px"></section>
+                    <h4 class="title-small">{{recipe.name}}</h4>
                     <p class="subtitle-small">por
-                        {{food.by}}</p>
+                        {{recipe.chef}}</p>
                 </a>
 
             {% endfor %}

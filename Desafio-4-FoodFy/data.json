@@ -1,0 +1,24 @@
+{
+  "recipes": [
+    {
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/collection/9647150/800x800",
+      "name": "Meu Prato",
+      "description": "uma prato saboroso",
+      "duration": "58",
+      "price": "55",
+      "chef": "lucas",
+      "created_at": 1600123350882
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://source.unsplash.com/collection/9647150/800x800",
+      "name": "Um novo teste",
+      "description": "Esse teste vai funcionar",
+      "duration": "55",
+      "price": "100",
+      "chef": "Lucas Caputo",
+      "created_at": 1600125630473
+    }
+  ]
+}

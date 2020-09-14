@@ -14,6 +14,8 @@ exports.show = function (req, res) {
     const instructor = {
         ...foundInstructor,
         age: age(foundInstructor.birth),
+        gender: "",
+        services: foundInstructor.services.split(","),
         created_at: Intl.DateTimeFormat("pt-BR").format(
             foundInstructor.created_at
         )
@@ -45,8 +47,6 @@ exports.post = function (req, res) {
     const created_at = Date.now();
     const id = Number(data.instructors.length + 1);
 
-    services = services.split(",");
-
     data.instructors.push({
         id,
         name,
@@ -63,11 +63,7 @@ exports.post = function (req, res) {
         if (err) return res.send("Write file error");
     });
 
-    const redirectRoute = `/instructors/${id}`;
-
-    console.log(redirectRoute);
-
-    return res.redirect(redirectRoute);
+    return res.redirect(`/instructors/${id}`);
 };
 
 exports.edit = function (req, res) {
@@ -118,3 +114,22 @@ exports.put = function (req, res) {
         return res.redirect(`/instructors/${id}`);
     });
 };
+
+exports.delete = function(req, res) {
+    const {id} = req.body
+    const filteresINstructors = data.instructors.filter(function(instructor) {
+        return instructor.id != id
+    })
+
+    data.instructors = filteresINstructors
+
+    fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
+        if (err) return res.send("write error!");
+
+        return res.redirect(`/instructors`);
+    })
+}
+
+exports.index = function(req, res) {
+    return res.render("instructors/index", { instructors: data.instructors})
+}

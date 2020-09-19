@@ -2,20 +2,20 @@
 <html>
     <head>
         {% block head %}
-            <title>Teacher Manager</title>
+            <title>Launchstore</title>
         {% endblock %}
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <link rel="stylesheet" href="/styles.css"/>
     </head>
     <body>
-        <header>
-            <div class="links">
-                <a href="/instructors">Instrutores</a>
-                <a href="/members">Alunos</a>
-            </div>
-        </header>
+        
+        {%include "parts/header.njk"%}
 
         {% block content %}{% endblock %}
-        <script src="/scripts.js"></script>
+
+        {%include "parts/footer.njk"%}
+
     </body>
 </html>

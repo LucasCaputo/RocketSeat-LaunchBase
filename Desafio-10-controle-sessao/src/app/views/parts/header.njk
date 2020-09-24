@@ -26,11 +26,30 @@
                         Novo Anúncio
                     </a>
                 </li>
-                <li>
-                    <a href="/accounts">
+                <li class="accounts">
+                    <a {%if session.userId%} href="#" {%else%} href="/accounts"{%endif%}>
                         <i class="material-icons">account_circle</i>
                         Minha Conta
                     </a>
+                {% if session.userId%}
+                    <ul class="submenu">
+                        <li>
+                            <a href="/users">Minha conta</a>
+                        </li>
+                        <li>
+                            <a href="/buying">Meus pedidos</a>
+                        </li>
+                        <li>
+                            <a href="/selling">Minhas vendas</a>
+                        </li>
+                        <li>
+                            <form action="/users/logout" method="POST">
+                                <button>Sair</button>
+
+                            </form>
+                        </li>
+                    </ul>
+                {%endif%}
                 </li>
             </ul>
         </nav>
